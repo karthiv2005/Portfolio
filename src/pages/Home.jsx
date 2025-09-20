@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import images from '../assets/images'
 import { FaLinkedin, FaInstagram, FaGithub, FaEnvelope, FaPhone } from 'react-icons/fa'
+import { IoMdClose } from "react-icons/io";
 
 const Contact = () => {
     return (
@@ -53,11 +54,28 @@ const Contact = () => {
 }
 
 const Home = () => {
+
+    const [ fullImage, setFullImage ] = useState(false)
+
+    function toggleImage() {
+        setFullImage(!fullImage)
+    }
+
     return (
         <div className='overflow-x-hidden relative'>
+            {
+                fullImage &&
+                <div onClick={toggleImage} className='fixed h-screen w-screen bg-black/60 z-50 flex justify-center items-center'>
+                    <button onClick={toggleImage} className='absolute top-4 right-6 text-black p-2 rounded-full cursor-pointer text-4xl bg-white'><IoMdClose /></button>
+                    <img src={images.Full} className='h-screen  md:h-[90vh] object-cover md:rounded-3xl relative z-50' alt="" srcset="" />
+                </div>
+            }
             {/* Navbar */}
             <div className='flex fixed z-10 top-0 w-full backdrop-blur-sm justify-between px-4 md:px-12 py-4 md:py-6 items-center text-base md:text-xl'>
-                <h1 className='uppercase text-2xl md:text-3xl font-bold'>Karthi</h1>
+                <div className='flex space-x-3 items-center'>
+                    <img src={images.Half} onClick={toggleImage} className='w-16 h-16 rounded-full' alt="" />
+                    <h1 className='uppercase text-2xl md:text-3xl font-bold'>Karthi</h1>
+                </div>
                 <div className='space-x-4 md:space-x-6  hidden md:flex'>
                     <a href="https://www.linkedin.com/in/karthi-v-881899379/" target="_blank" className='hover:text-dark transition-colors duration-300' rel="noopener noreferrer">LinkedIn</a>
                     <a href="https://www.instagram.com/mrr_kd_karthi/" target="_blank" className='hover:text-dark transition-colors duration-300' rel="noopener noreferrer">Instagram</a>
