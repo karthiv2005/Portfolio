@@ -63,7 +63,7 @@ const Home = () => {
                     <a href="https://www.instagram.com/mrr_kd_karthi/" target="_blank" className='hover:text-dark transition-colors duration-300' rel="noopener noreferrer">Instagram</a>
                     <a href="https://github.com/karthicb22s614595" target="_blank" className='hover:text-dark transition-colors duration-300' rel="noopener noreferrer">GitHub</a>
                 </div>
-                <a href="/Karthi_Resume.pdf" target="_blank" className='hover:text-dark transition-colors duration-300' rel="noopener noreferrer">Resume</a>
+                <a href="https://karthiv2005.github.io/Portfolio/Karthi_Resume.pdf" target="_blank" className='hover:text-dark transition-colors duration-300' rel="noopener noreferrer">Resume</a>
             </div>
 
             {/* Hero Section */}
